@@ -83,8 +83,7 @@
 
                                                 <div class="col-lg-12">
                                                     <fieldset>
-                                                        <button type="submit" class="main-button">Send
-                                                            Message
+                                                        <button type="submit" class="main-button">Update
                                                         </button>
                                                     </fieldset>
                                                 </div>

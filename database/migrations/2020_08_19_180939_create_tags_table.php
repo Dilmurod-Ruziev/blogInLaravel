@@ -13,19 +13,18 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema ::create('tags', function (Blueprint $table) {
-            $table -> id();
-            $table -> string('name');
-            $table -> timestamps();
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
 
-        Schema ::create('article_tag', function (Blueprint $table) {
-            $table -> id();
-            $table -> foreignId('article_id') -> constrained() -> onDelete('cascade');
-            $table -> foreignId('tag_id') -> constrained() -> onDelete('cascade');
-            $table -> timestamps();
-            $table -> unique(['article_id', 'tag_id']);
-
+        Schema::create('article_tag', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+            $table->foreignId('tag_id')->constrained()->onDelete('cascade');
+            $table->timestamps();
+            $table->unique(['article_id', 'tag_id']);
         });
     }
 
@@ -36,6 +35,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema ::dropIfExists('tags');
+        Schema::dropIfExists('tags');
     }
 }

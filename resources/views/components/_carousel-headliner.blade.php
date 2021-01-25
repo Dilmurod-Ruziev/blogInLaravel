@@ -2,7 +2,7 @@
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
-            @foreach($articles as $article)
+            @foreach($allArticles as $article)
                 @if(count($article->likes)>0)
                 <div class="item">
                     <img src="{{$article->getPhoto()}}" alt="photo">
@@ -16,7 +16,7 @@
                                 <li class="text-white"><a href="{{$article->user->id}}">{{$article->user->name}}</a></li>
                                 <li class="text-white">{{$article->created_at}}</li>
                                 <li class="text-white">{{read_time($article->body)}}</li>
-                                <li class="text-danger"><i class="fas fa-heart"> {{count($article->likes)}}</i></li>
+                                @include('components.like-buttons')
                             </ul>
                         </div>
                     </div>

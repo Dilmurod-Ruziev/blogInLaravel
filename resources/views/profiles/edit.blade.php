@@ -6,7 +6,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="/profiles/{{$user->id}}">
+                                <form method="POST" action="/profiles/{{$user->id}}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group row">

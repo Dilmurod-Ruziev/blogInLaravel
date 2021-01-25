@@ -2,10 +2,8 @@
 
 namespace App;
 
-
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 
 class User extends Authenticatable
 {
@@ -17,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'avatar', 'username', 'name', 'email', 'password', 'description'
+        'avatar', 'username', 'name', 'email', 'password', 'description',
     ];
 
     /**
@@ -41,31 +39,27 @@ class User extends Authenticatable
     public function getAvatar()
     {
 //        return asset('storage/'.$this->avatar ?: '/images/default-avatar.jpeg');
-        if ($this -> avatar) {
-            return asset('storage/'.$this -> avatar);
+        if ($this->avatar) {
+            return asset('storage/'.$this->avatar);
         } else {
             return asset('/images/default-avatar.jpeg');
         }
-
     }
 
     public function timeline()
     {
-        $friends = $this -> follows() -> pluck('id');
-        return Article ::whereIn('user_id', $friends)
-            -> orWhere('user_id', $this -> id)
-            -> latest()
-            -> paginate(7);
+        $friends = $this->follows()->pluck('id');
+
+        return Article::whereIn('user_id', $friends)->orWhere('user_id', $this->id)->latest()->paginate(7);
     }
 
     public function articles()
     {
-        return $this -> hasMany(Article::class) -> latest();
+        return $this->hasMany(Article::class)->latest();
     }
 
     public function likes()
     {
-        return $this -> hasMany(Like::class) -> where('liked', true);
+        return $this->hasMany(Like::class)->where('liked', true);
     }
-
 }

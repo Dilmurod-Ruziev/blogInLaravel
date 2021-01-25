@@ -15,17 +15,13 @@ class ContactController extends Controller
 
     public function store()
     {
-        request() -> validate([
-            'name' => 'required',
-            'email' => 'required',
-            'subject' => 'required',
-            'msg' => 'required'
+        request()->validate([
+            'name' => 'required', 'email' => 'required', 'subject' => 'required', 'msg' => 'required',
         ]);
 
-        Mail ::to(request('email'))
-            -> send(new ContactUs(request('name'), request('email'), request('subject'), request('msg')));
+        Mail::to(request('email'))->send(new ContactUs(request('name'), request('email'), request('subject'),
+            request('msg')));
 
-        return redirect('/contact')
-            -> with('message', 'Thank you for your response!');
+        return redirect('/contact')->with('message', 'Thank you for your response!');
     }
 }
