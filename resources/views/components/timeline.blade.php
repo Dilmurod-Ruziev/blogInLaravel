@@ -17,7 +17,7 @@
                                         class="nav-link disabled">{{$article->created_at->format('H:m, j F')}}</a>
                 </li>
                 <li class="nav-item"><a href="#" class="nav-link disabled">{{read_time($article->body)}}</a></li>
-            //    @include('components.like-buttons')
+            {{--                @include('components.like-buttons')--}}
                 @foreach($article->tags as $tag)
                     <li class="nav-item"><a href="/tag/{{$tag->id}}" class="nav-link">{{$tag->name}}</a>
                     </li>
