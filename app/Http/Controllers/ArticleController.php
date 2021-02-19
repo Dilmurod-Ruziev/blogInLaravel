@@ -37,7 +37,7 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -56,7 +56,9 @@ class ArticleController extends Controller
     public function validateArticle(): array
     {
         $attributes = request()->validate([
-            'title' => 'required', 'subheading' => 'required', 'photo' => 'image|mimes:jpg,png,jpeg,gif,svg',
+            'title' => 'required',
+            'subheading' => 'required',
+            'photo' => 'image|mimes:jpg,png,jpeg,gif,svg',
             'body' => 'required',
         ]);
         if (request(['photo'])) {
@@ -69,7 +71,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function show(Article $article)
@@ -90,7 +92,7 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function edit(Article $article)
@@ -105,8 +107,8 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Article  $article
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Article $article)
@@ -114,13 +116,13 @@ class ArticleController extends Controller
         Article::where('id', $article->id)->update($this->validateArticle());
         $article->tags()->attach(request('tags'));
 
-        return redirect('/articles/'.$article->id);
+        return redirect('/articles/' . $article->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Article  $article
+     * @param \App\Article $article
      * @return \Illuminate\Http\Response
      */
     public function destroy(Article $article)
