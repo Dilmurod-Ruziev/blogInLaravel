@@ -31,9 +31,8 @@
 
                                         <div class="col-md-6 d-flex flex-row-reverse">
                                             <img src="{{$user->getAvatar()}}" alt="avatar" width="50">
-                                            <input value="{{ $user->avatar }}" type="file"
+                                            <input value="{{ $user->avatar }}" type="file" name="avatar"
                                                    class="form-control @error('avatar') is-invalid @enderror"
-
                                             >
                                             @error('avatar')
                                             <span class="invalid-feedback" role="alert">

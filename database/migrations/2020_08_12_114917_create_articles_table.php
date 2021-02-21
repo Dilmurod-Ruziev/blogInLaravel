@@ -13,14 +13,14 @@ class CreateArticlesTable extends Migration
      */
     public function up()
     {
-        Schema ::create('articles', function (Blueprint $table) {
-            $table -> id();
-            $table -> foreignId('user_id')->constrained()->onDelete('cascade');
-            $table -> string('title');
-            $table -> string('subheading');
+        Schema::create('articles', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->string('subheading');
             $table->string('photo')->nullable();
-            $table -> text('body');
-            $table -> timestamps();
+            $table->text('body');
+            $table->timestamps();
         });
     }
 
@@ -31,6 +31,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema ::dropIfExists('articles');
+        Schema::dropIfExists('articles');
     }
 }

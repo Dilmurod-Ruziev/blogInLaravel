@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="sidebar-item categories">
                     <div class="sidebar-heading">
-                        <a href="/profiles"><h2>Following users</h2></a>
+                        <a href="/profiles"><h2>Friends</h2></a>
                     </div>
                     <div class="content">
                         <ul>
@@ -13,7 +13,7 @@
                                 <li><a href="/profiles/{{$user->id}}">- {{$user->name}}</a>
                                 </li>
                             @endforeach
-                                <li><a href="/profiles">- All Users</a>
+                                <li><a href="/profiles"> >> All Users <<</a>
                                 </li>
                         </ul>
                     </div>

@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Auth::routes();
 
 Route::get('/', function () {
@@ -24,6 +23,7 @@ Route::get('/contact', 'ContactController@show');
 
 Route::middleware('auth')->group(function () {
     Route::get('/feed', 'ProfilesController@feed');
+
 //Tags
     Route::post('/tag', 'TagController@store');
     Route::get('/tag', 'TagController@index');
