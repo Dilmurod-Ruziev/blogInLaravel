@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/', function () {
+    return view('home');
+});
+Route::post('/contact', 'ContactController@store');
+Route::get('/contact', 'ContactController@show');
+
 Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('home');
-    });
     Route::get('/feed', 'ProfilesController@feed');
-    Route::post('/contact', 'ContactController@store');
-    Route::get('/contact', 'ContactController@show');
+
 //Tags
     Route::post('/tag', 'TagController@store');
     Route::get('/tag', 'TagController@index');
