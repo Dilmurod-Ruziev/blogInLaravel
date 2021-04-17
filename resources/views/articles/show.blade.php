@@ -40,6 +40,16 @@
                         {{--                                @include('components._comments')--}}
                     </div>
                     @include('components._sidebar-links')
+                    <div class="col-lg-12">
+                        <div class="sidebar-item comments">
+                            <div class="sidebar-heading">
+                                <h2>Comments</h2>
+                            </div>
+                            <div class="content">
+                                @comments(['model' => $article])
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

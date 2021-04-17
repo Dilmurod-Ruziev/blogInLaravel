@@ -15,6 +15,7 @@
         "laravel/framework": "^7.22.2",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
+        "laravelista/comments": "3.6.1",
         "mtownsend/read-time": "^1.1"
     },
     "require-dev": {

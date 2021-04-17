@@ -3,10 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravelista\Comments\Commentable;
 
 class Article extends Model
 {
-    use Likable;
+    use Likable, Commentable;
     protected $fillable = ['title', 'photo', 'subheading', 'body', 'user_id', 'tags','likes'];
     public function path()
     {
