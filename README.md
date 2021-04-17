@@ -29,13 +29,17 @@ Run it on your local machine or you can check the [demo version on Heroku](http:
     * Minute to read functionality (library)
 * **Tags** 
     * **C**reate, **R**ead, **U**pdate, **D**elete functionality for all tags
-    * Many-to-many relationship with articles  
+    * Many-to-many relationship with articles 
+* **Comments**
+    * **C**reate, **R**ead, **U**pdate, **D**elete functionality for all comments
+    * Reply to comments
 * **Users** 
     * Authentication 
     * Subscription (to other users)
     * Editing your personal info, adding status or image
     * Feed (shows articles from users that you subscribed)
 * **REST API**
+
 
 #### Working on / Future plans:
 * Roles (such as admin, moderators, users, guests)
