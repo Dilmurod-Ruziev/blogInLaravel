@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+\Illuminate\Support\Facades\Auth::routes();
 
 Route::get('/', function () {
     return view('home');
@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/tag/{tag}', 'TagController@destroy');
     Route::get('/tag/{tag}', 'TagController@show')->name('tag.show');
     Route::get('/tag/{tag}/edit', 'TagController@edit')->name('tag.edit');
+//    Route::resource('tag','TagController');
+//    Route::resource('profiles','ProfilesController');
 //Articles
     Route::post('/articles', 'ArticleController@store');
     Route::get('/articles', 'ArticleController@index')->name('home');

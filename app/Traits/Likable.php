@@ -6,7 +6,10 @@
  * Time: 13:09
  */
 
-namespace App;
+namespace App\Traits;
+
+use App\Models\Like;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Likable
@@ -14,7 +17,7 @@ trait Likable
 
     public function scopeWithLikes(Builder $query)
     {
-        $query -> leftJoinSub(
+        $query->leftJoinSub(
             'SELECT article_id, SUM(liked) likes FROM likes
              GROUP BY article_id',
             'likes',
@@ -24,14 +27,14 @@ trait Likable
 
     public function unLike($user = null)
     {
-        return $this -> like($user, false);
+        return $this->like($user, false);
     }
 
     public function like($user = null, $liked = true)
     {
-        $this -> likes() -> updateOrCreate(
+        $this->likes()->updateOrCreate(
             [
-                'user_id' => $user ? $user -> id : current_user(),
+                'user_id' => $user ? $user->id : current_user(),
             ], [
                 'liked' => $liked,
             ]
@@ -41,7 +44,7 @@ trait Likable
 
     public function isLikedBy(User $user)
     {
-        return (bool)$user -> likes -> where('article_id', $this -> id)-> count();
+        return (bool)$user->likes->where('article_id', $this->id)->count();
     }
 
 //    public function isDislikedBy(User $user)
@@ -51,7 +54,7 @@ trait Likable
 
     public function likes()
     {
-        return $this -> hasMany(Like::class)->where('liked', true);
+        return $this->hasMany(Like::class)->where('liked', true);
     }
 
 //    public function dislikes()

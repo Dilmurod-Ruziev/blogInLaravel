@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
-use App\User;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class FollowsController extends Controller
 {
     public function store(User $user)
     {
-        auth() -> user() -> toggleFollow($user);
+        auth()->user()->toggleFollow($user);
         return back();
     }
 

@@ -1,7 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\Traits\Followable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravelista\Comments\Commenter;
@@ -39,9 +40,8 @@ class User extends Authenticatable
 
     public function getAvatar()
     {
-//        return asset('storage/'.$this->avatar ?: '/images/default-avatar.jpeg');
         if ($this->avatar) {
-            return asset('storage/'.$this->avatar);
+            return asset('storage/' . $this->avatar);
         } else {
             return asset('/images/default-avatar.jpeg');
         }

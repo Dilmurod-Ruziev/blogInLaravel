@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Tag;
-use App\User;
+use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Validation\Rule;
 
 class ProfilesController extends Controller
@@ -34,6 +34,7 @@ class ProfilesController extends Controller
         abort_if($user->isNot(current_user()), 404);
         return view('profiles.edit', compact('user'));
     }
+
     public function validateUser($user): array
     {
         $attributes = request()->validate([
@@ -50,6 +51,7 @@ class ProfilesController extends Controller
         }
         return $attributes;
     }
+
     public function update(User $user)
     {
         User::where('id', $user->id)->update($this->validateUser($user));

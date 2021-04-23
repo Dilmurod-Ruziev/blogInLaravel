@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Response;
 use Mtownsend\ReadTime\ReadTime;
-use App\Article;
-use App\Tag;
+use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -12,7 +13,7 @@ class ArticleController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
 
     public function index()
@@ -27,7 +28,7 @@ class ArticleController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -37,8 +38,8 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -72,7 +73,7 @@ class ArticleController extends Controller
      * Display the specified resource.
      *
      * @param \App\Article $article
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show(Article $article)
     {
@@ -93,7 +94,7 @@ class ArticleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \App\Article $article
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function edit(Article $article)
     {
@@ -107,9 +108,9 @@ class ArticleController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param \App\Article $article
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function update(Request $request, Article $article)
     {
@@ -123,7 +124,7 @@ class ArticleController extends Controller
      * Remove the specified resource from storage.
      *
      * @param \App\Article $article
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function destroy(Article $article)
     {
