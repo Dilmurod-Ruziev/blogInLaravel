@@ -20,7 +20,7 @@
                                                 @endif
                                                 <ul class="post-info">
                                                     <li>
-                                                        <a href="{{route('profile',$profile->id)}}">{{$profile->name}}</a>
+                                                        <a href="{{route('profiles.show',$profile->id)}}">{{$profile->name}}</a>
                                                     </li>
                                                     <li>
                                                         <a href="#">{{'Joined '.$profile->created_at->format('j F Y')}}</a>

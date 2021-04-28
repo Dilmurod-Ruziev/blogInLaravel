@@ -15,11 +15,11 @@ class ProfilesController extends Controller
         return view('profiles.index', compact('profiles', 'tags'));
     }
 
-    public function show(User $user)
+    public function show(User $profile)
     {
-        $articles = $user->articles()->paginate(7);
+        $articles = $profile->articles()->paginate(7);
         $tags = Tag::all();
-        return view('profiles.show', compact('articles', 'user', 'tags'));
+        return view('profiles.show', compact('articles', 'profile', 'tags'));
     }
 
     public function feed()
@@ -29,34 +29,33 @@ class ProfilesController extends Controller
         return view('feed', compact('articles', 'tags'));
     }
 
-    public function edit(User $user)
+    public function edit(User $profile)
     {
-        abort_if($user->isNot(current_user()), 404);
-        return view('profiles.edit', compact('user'));
+        abort_if($profile->isNot(current_user()), 404);
+        return view('profiles.edit', compact('profile'));
     }
 
-    public function validateUser($user): array
+    public function update(User $profile)
+    {
+        User::where('id', $profile->id)->update($this->validateUser($profile));
+        return redirect('/profiles/' . $profile->id);
+    }
+
+    public function validateUser($profile): array
     {
         $attributes = request()->validate([
             'username' => [
-                'string', 'required', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($user)
+                'string', 'required', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($profile)
             ],
             'name' => ['string', 'required', 'max:255',],
             'description' => ['string', 'max:255',],
             'avatar' => 'image|mimes:jpg,png,jpeg,gif,svg',
-            'email' => ['string', 'required', 'max:255', 'email', Rule::unique('users')->ignore($user),]
+            'email' => ['string', 'required', 'max:255', 'email', Rule::unique('users')->ignore($profile),]
         ]);
         if (request(['avatar'])) {
             $attributes['avatar'] = request('avatar')->store('avatars');
         }
         return $attributes;
-    }
-
-    public function update(User $user)
-    {
-        User::where('id', $user->id)->update($this->validateUser($user));
-        return redirect('/profiles/' . $user->id);
-
     }
 
 

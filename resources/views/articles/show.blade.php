@@ -15,7 +15,7 @@
                             <div class="card-header border-light">
                                 <img src="{{$article->user->getAvatar()}}" alt="img" class="rounded-circle" height="30"
                                      width="30">
-                                <a href="{{route('profile',$article->user->id)}}"
+                                <a href="{{route('profiles.show',$article->user->id)}}"
                                    class="text-dark">  {{$article->user->name}}</a>
                             </div>
                             <div class="card-body">

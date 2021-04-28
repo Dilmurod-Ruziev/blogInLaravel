@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 
 class FollowsController extends Controller
 {
-    public function store(User $user)
+    public function store(User $profile)
     {
-        auth()->user()->toggleFollow($user);
+        auth()->user()->toggleFollow($profile);
         return back();
     }
 

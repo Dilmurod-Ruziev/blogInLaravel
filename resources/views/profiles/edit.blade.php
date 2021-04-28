@@ -6,7 +6,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="/profiles/{{$user->id}}" enctype="multipart/form-data">
+                                <form method="POST" action="/profiles/{{$profile->id}}" enctype="multipart/form-data">
                                     @csrf
                                     @method('PUT')
                                     <div class="form-group row">
@@ -16,7 +16,7 @@
                                         <div class="col-md-6">
                                             <input id="name" type="text"
                                                    class="form-control @error('name') is-invalid @enderror" name="name"
-                                                   value="{{ $user->name }}" required autocomplete="name" autofocus>
+                                                   value="{{ $profile->name }}" required autocomplete="name" autofocus>
 
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
@@ -30,8 +30,8 @@
                                                class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
 
                                         <div class="col-md-6 d-flex flex-row-reverse">
-                                            <img src="{{$user->getAvatar()}}" alt="avatar" width="50">
-                                            <input value="{{ $user->avatar }}" type="file" name="avatar"
+                                            <img src="{{$profile->getAvatar()}}" alt="avatar" width="50">
+                                            <input value="{{ $profile->avatar }}" type="file" name="avatar"
                                                    class="form-control @error('avatar') is-invalid @enderror"
                                             >
                                             @error('avatar')
@@ -49,7 +49,7 @@
                                             <input id="description" type="text"
                                                    class="form-control @error('description') is-invalid @enderror"
                                                    name="description"
-                                                   value="{{ $user->description }}" autofocus>
+                                                   value="{{ $profile->description }}" autofocus>
 
                                             @error('description')
                                             <span class="invalid-feedback" role="alert">
@@ -63,7 +63,7 @@
                                                class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="username" value="{{ $user->username }}" type="text"
+                                            <input id="username" value="{{ $profile->username }}" type="text"
                                                    class="form-control @error('username') is-invalid @enderror"
                                                    name="username" value="{{ old('username') }}" required
                                                    autocomplete="username" autofocus>
@@ -80,7 +80,7 @@
                                                class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" value="{{ $user->email }}" type="email"
+                                            <input id="email" value="{{ $profile->email }}" type="email"
                                                    class="form-control @error('email') is-invalid @enderror"
                                                    name="email" value="{{ old('email') }}" required
                                                    autocomplete="email">
