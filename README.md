@@ -19,7 +19,7 @@ The main reason for creating this project is learning Laravel by implementation 
 * Bootstrap: 4.0
 
 ## Setup
-Run it on your local machine or you can check the [demo version on Heroku](http://blog-in-laravel.herokuapp.com/)
+Run it on your local machine or you can check the [demo version on Heroku](http://blog-in-laravel.herokuapp.com/login)
 
 ## Features
 #### List of features:
