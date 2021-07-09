@@ -1,7 +1,15 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\{
+    ArticleController,
+    ArticleLikesController,
+    ContactController,
+    FollowsController,
+    ProfilesController,
+    TagController
+};
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +24,25 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::middleware('auth')->group(function () {
-    Route::resource('tag', 'TagController');
-
-    Route::resource('articles', 'ArticleController');
-    Route::post('/articles/{article}/like', 'ArticleLikesController@store');
-
-    Route::resource('profiles', 'ProfilesController')->except('store');
-    Route::get('/feed', 'ProfilesController@feed');
-    Route::post('/profiles/{profile}/follow', 'FollowsController@store');
-});
+//Route::get('/', [ArticleController::class, 'index']);
 //Contact
-Route::post('/contact', 'ContactController@store');
-Route::get('/contact', 'ContactController@show');
+Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/contact', [ContactController::class, 'show']);
+
+
+Route::middleware('auth')->group(function () {
+    Route::resource('tag', TagController::class);
+
+    Route::resource('articles', ArticleController::class)
+//        ->except('index')
+    ;
+    Route::post('/articles/{article}/like', [ArticleLikesController::class, 'store']);
+
+    Route::resource('profiles', ProfilesController::class)->except('store');
+    Route::get('/feed', [ProfilesController::class, 'feed']);
+    Route::post('/profiles/{profile}/follow', [FollowsController::class, 'store']);
+});
+
 
 
 
