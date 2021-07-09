@@ -63,11 +63,13 @@ class ArticleController extends Controller
 
     public function edit(Article $article)
     {
-//        $atags = array_column($article->tags, 'name');
-//        $result = array_diff($tags, $atags);
-        $tags = Tag::all();
+        $articleTags = $article->tags;
+        $unionTags = array_column($articleTags->toArray(), 'name','id');
+        $allTags = Tag::pluck('name');
+        $differTags = array_diff($allTags->toArray(), $unionTags);
 
-        return view('articles.edit', compact('article', 'tags'));
+        $tags = Tag::all();
+        return view('articles.edit', compact('article', 'unionTags','tags','differTags'));
     }
 
     /**
@@ -80,8 +82,7 @@ class ArticleController extends Controller
     public function update(CreateArticleRequest $request, Article $article)
     {
         $article->update($request->validated());
-        $article->tags()->attach(request('tags'));
-
+        $article->tags()->sync(request('tags'));
         return redirect('/articles/' . $article->id);
     }
 

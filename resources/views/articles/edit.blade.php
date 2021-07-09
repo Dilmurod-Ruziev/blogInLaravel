@@ -57,23 +57,13 @@
                                                 </div>
                                                 <div class="col-lg-12 my-2">
                                                     <select multiple data-role="tags-input" name="tags[]">
-{{--
-{{--                                                        @foreach($tags as $tag)--}}
-{{--                                                        @foreach($article->tags as $tagu)--}}
-{{--                                                            $tags = collect([$tags,$article->tags)]->array_flip();--}}
-{{--                                                            <option value="{{$tagu->id}}"--}}
-{{--                                                                    selected>{{$tagu->name}}</option>--}}
+                                                        @foreach($unionTags as $id => $name)
+                                                            <option value="{{$id}}" selected>{{$name}}</option>
+                                                        @endforeach
 
-{{--                                                            @if($tag == $tagu)--}}
-{{--                                                                $tags->forget($tag);--}}
-{{--                                                            @endif--}}
-{{--                                                            @endforeach--}}
-{{--                                                            <option value="{{$tag->id}}">{{$tag->name}}</option>--}}
-{{--                                                        @endforeach--}}
-
-                                                        @foreach($tags as $tag)
-                                                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                                            @endforeach
+                                                        @foreach($differTags as $id => $name)
+                                                            <option value="{{$id}}">{{$name}}</option>
+                                                        @endforeach
 
                                                         @error('tags')
                                                         <div class="invalid-feedback">{{$message}}</div>
