@@ -9,7 +9,8 @@
                                 <hr>
                                 <div class="sidebar-item contact-form">
                                     <div class="content">
-                                        <form id="contact" action="/articles" method="post" enctype="multipart/form-data">
+                                        <form id="contact" action="/articles" method="post"
+                                              enctype="multipart/form-data">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-md-12 my-2">

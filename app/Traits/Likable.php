@@ -10,7 +10,6 @@ namespace App\Traits;
 
 use App\Models\Like;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Builder;
 
 trait Likable
 {
@@ -20,7 +19,8 @@ trait Likable
         $this->likes()->updateOrCreate(
             [
                 'user_id' => $user ? $user->id : current_user(),
-            ], [
+            ],
+            [
                 'liked' => $liked,
             ]
         );

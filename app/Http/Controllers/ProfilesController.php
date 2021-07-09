@@ -38,20 +38,26 @@ class ProfilesController extends Controller
     public function update(User $profile)
     {
         User::where('id', $profile->id)->update($this->validateUser($profile));
-        return redirect('/profiles/' . $profile->id);
+        return redirect('/profiles/'.$profile->id);
     }
 
     public function validateUser($profile): array
     {
-        $attributes = request()->validate([
-            'username' => [
-                'string', 'required', 'max:255', 'alpha_dash', Rule::unique('users')->ignore($profile)
-            ],
-            'name' => ['string', 'required', 'max:255',],
-            'description' => ['string', 'max:255',],
-            'avatar' => 'image|mimes:jpg,png,jpeg,gif,svg',
-            'email' => ['string', 'required', 'max:255', 'email', Rule::unique('users')->ignore($profile),]
-        ]);
+        $attributes = request()->validate(
+            [
+                'username' => [
+                    'string',
+                    'required',
+                    'max:255',
+                    'alpha_dash',
+                    Rule::unique('users')->ignore($profile)
+                ],
+                'name' => ['string', 'required', 'max:255',],
+                'description' => ['string', 'max:255',],
+                'avatar' => 'image|mimes:jpg,png,jpeg,gif,svg',
+                'email' => ['string', 'required', 'max:255', 'email', Rule::unique('users')->ignore($profile),]
+            ]
+        );
         if (request(['avatar'])) {
             $attributes['avatar'] = request('avatar')->store('avatars');
         }

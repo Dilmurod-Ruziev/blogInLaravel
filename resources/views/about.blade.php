@@ -1,5 +1,4 @@
 <x-master>
-    <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="heading-page header-text">
         <section class="page-heading">

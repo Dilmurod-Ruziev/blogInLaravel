@@ -1,13 +1,11 @@
 <?php
 
-use App\Http\Controllers\{
-    ArticleController,
+use App\Http\Controllers\{ArticleController,
     ArticleLikesController,
     ContactController,
     FollowsController,
     ProfilesController,
-    TagController
-};
+    TagController};
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 

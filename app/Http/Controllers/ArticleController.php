@@ -40,7 +40,7 @@ class ArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param Request $request
+     * @param  Request  $request
      * @return Response
      */
     public function store(CreateArticleRequest $request)
@@ -52,7 +52,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Article $article
+     * @param  \App\Article  $article
      * @return Response
      */
     public function show(Article $article)
@@ -64,32 +64,32 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $articleTags = $article->tags;
-        $unionTags = array_column($articleTags->toArray(), 'name','id');
+        $unionTags = array_column($articleTags->toArray(), 'name', 'id');
         $allTags = Tag::pluck('name');
         $differTags = array_diff($allTags->toArray(), $unionTags);
 
         $tags = Tag::all();
-        return view('articles.edit', compact('article', 'unionTags','tags','differTags'));
+        return view('articles.edit', compact('article', 'unionTags', 'tags', 'differTags'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param Request $request
-     * @param \App\Article $article
+     * @param  Request  $request
+     * @param  \App\Article  $article
      * @return Response
      */
     public function update(CreateArticleRequest $request, Article $article)
     {
         $article->update($request->validated());
         $article->tags()->sync(request('tags'));
-        return redirect('/articles/' . $article->id);
+        return redirect('/articles/'.$article->id);
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Article $article
+     * @param  \App\Article  $article
      * @return Response
      */
     public function destroy(Article $article)

@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+        rel="stylesheet">
 
     <title>Stand Blog Posts</title>
 
@@ -45,7 +47,8 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html"><h2>Stand Blog<em>.</em></h2></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -134,7 +137,8 @@
                                         <li><a href="#">May 31, 2020</a></li>
                                         <li><a href="#">12 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -162,7 +166,8 @@
                                         <li><a href="#">May 22, 2020</a></li>
                                         <li><a href="#">26 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -190,7 +195,8 @@
                                         <li><a href="#">May 18, 2020</a></li>
                                         <li><a href="#">42 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -218,7 +224,8 @@
                                         <li><a href="#">May 16, 2020</a></li>
                                         <li><a href="#">28 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -246,7 +253,8 @@
                                         <li><a href="#">May 12, 2020</a></li>
                                         <li><a href="#">16 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -274,7 +282,8 @@
                                         <li><a href="#">May 10, 2020</a></li>
                                         <li><a href="#">3 Comments</a></li>
                                     </ul>
-                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                                    <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a
+                                        mauris sit amet eleifend.</p>
                                     <div class="post-options">
                                         <div class="row">
                                             <div class="col-lg-12">
@@ -306,7 +315,8 @@
                         <div class="col-lg-12">
                             <div class="sidebar-item search">
                                 <form id="search_form" name="gs" method="GET" action="#">
-                                    <input type="text" name="q" class="searchText" placeholder="type to search..." autocomplete="on">
+                                    <input type="text" name="q" class="searchText" placeholder="type to search..."
+                                           autocomplete="on">
                                 </form>
                             </div>
                         </div>
@@ -411,13 +421,13 @@
 <script src="assets/js/isotope.js"></script>
 <script src="assets/js/accordions.js"></script>
 
-<script language = "text/Javascript">
+<script language="text/Javascript">
     cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t){                   //declaring the array outside of the
-        if(! cleared[t.id]){                      // function makes it static and global
+    function clearField(t) {                   //declaring the array outside of the
+        if (!cleared[t.id]) {                      // function makes it static and global
             cleared[t.id] = 1;  // you could use true and false, but that's more typing
-            t.value='';         // with more chance of typos
-            t.style.color='#fff';
+            t.value = '';         // with more chance of typos
+            t.style.color = '#fff';
         }
     }
 </script>

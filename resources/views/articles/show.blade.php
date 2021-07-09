@@ -6,9 +6,9 @@
                     <div class="col-lg-8">
                         <div class="card border-light">
                             <div class="d-flex">
-                            <a href="/articles/{{$article->id}}"><h2
-                                    class="card-title text-dark">{{$article->title}}</h2></a>
-                            @include('components.edit-delete')
+                                <a href="/articles/{{$article->id}}"><h2
+                                        class="card-title text-dark">{{$article->title}}</h2></a>
+                                @include('components.edit-delete')
                             </div>
                             <img class="card-img" src="{{$article->getPhoto()}}" alt="article-img"
                                  width="200">

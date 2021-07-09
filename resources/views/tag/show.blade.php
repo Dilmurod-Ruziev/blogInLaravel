@@ -17,7 +17,8 @@
             <section class="blog-posts">
                 <h1 class="text-info">There is no articles yet :(</h1>
                 <br>
-                <a href="/tag" class="d-flex"><i class="fas fa-arrow-left fa-2x d-flex text-dark"><h3 class="d-flex mx-1"> Tags</h3></i></a>
+                <a href="/tag" class="d-flex"><i class="fas fa-arrow-left fa-2x d-flex text-dark"><h3
+                            class="d-flex mx-1"> Tags</h3></i></a>
             </section>
         </div>
     @endif

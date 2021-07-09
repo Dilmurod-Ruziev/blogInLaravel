@@ -17,8 +17,8 @@
                                             <div class="col-md-12 my-2">
                                                 <fieldset>
                                                     <input class="form-control @error('tag') is-invalid @enderror"
-                                                        name="name" type="text" value="{{$tag->name}}"
-                                                        placeholder="Tag name" required
+                                                           name="name" type="text" value="{{$tag->name}}"
+                                                           placeholder="Tag name" required
                                                     >
                                                     @error('tag')
                                                     <div class="invalid-feedback">{{$errors->first('tag')}}</div>

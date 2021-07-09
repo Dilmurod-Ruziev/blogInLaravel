@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use App\Traits\Followable;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravelista\Comments\Commenter;
 
 class User extends Authenticatable
@@ -17,7 +17,12 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'avatar', 'username', 'name', 'email', 'password', 'description',
+        'avatar',
+        'username',
+        'name',
+        'email',
+        'password',
+        'description',
     ];
 
     /**
@@ -26,7 +31,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     /**
@@ -41,7 +47,7 @@ class User extends Authenticatable
     public function getAvatar()
     {
         if ($this->avatar) {
-            return asset('storage/' . $this->avatar);
+            return asset('storage/'.$this->avatar);
         } else {
             return asset('/images/default-avatar.jpeg');
         }

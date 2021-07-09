@@ -1,22 +1,4 @@
 <x-master>
-{{--    <div class="heading-page header-text">--}}
-{{--        <section class="page-heading">--}}
-{{--            <div class="container">--}}
-{{--                <div class="row">--}}
-{{--                    <div class="col-lg-12">--}}
-{{--                        <div class="text-content">--}}
-{{--                            <h4>contact us</h4>--}}
-{{--                            <h2>let’s stay in touch!</h2>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </section>--}}
-{{--    </div>--}}
-
-<!-- Banner Ends Here -->
-
-
     <section class="contact-us">
         <div class="container">
             <div class="row">
@@ -113,9 +95,9 @@
                                             </li>
                                             <li>
                                                 <h5>Tashkent city, Uzbekistan
-{{--                                                                                                    <br>Praesent laoreet 10660--}}
+                                                    {{--                                                                                                    <br>Praesent laoreet 10660--}}
                                                 </h5>
-                                                                                                <span>STREET ADDRESS</span>
+                                                <span>STREET ADDRESS</span>
                                             </li>
                                         </ul>
                                     </div>
