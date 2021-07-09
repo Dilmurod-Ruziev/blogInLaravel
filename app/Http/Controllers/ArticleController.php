@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateArticleRequest;
-use Illuminate\Http\Response;
-use Mtownsend\ReadTime\ReadTime;
 use App\Models\Article;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ArticleController extends Controller
 {
@@ -22,6 +21,7 @@ class ArticleController extends Controller
         $allArticles = Article::all();
         $articles = Article::latest()->paginate(7);
         $tags = Tag::all();
+
 
         return view('articles.index', compact('articles', 'tags', 'allArticles'));
     }
@@ -46,7 +46,7 @@ class ArticleController extends Controller
     public function store(CreateArticleRequest $request)
     {
         Article::create($request->validated());
-        return redirect('/articles');
+        return redirect('/');
     }
 
     /**

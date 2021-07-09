@@ -24,24 +24,20 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-//Route::get('/', [ArticleController::class, 'index']);
-//Contact
-Route::post('/contact', [ContactController::class, 'store']);
-Route::get('/contact', [ContactController::class, 'show']);
-
-
 Route::middleware('auth')->group(function () {
-    Route::resource('tag', TagController::class);
+    Route::get('/', [ArticleController::class, 'index']);
+    Route::resource('articles', ArticleController::class);Route::resource('tag', TagController::class);
 
-    Route::resource('articles', ArticleController::class)
-//        ->except('index')
-    ;
     Route::post('/articles/{article}/like', [ArticleLikesController::class, 'store']);
 
     Route::resource('profiles', ProfilesController::class)->except('store');
     Route::get('/feed', [ProfilesController::class, 'feed']);
     Route::post('/profiles/{profile}/follow', [FollowsController::class, 'store']);
 });
+
+//Contact
+Route::post('/contact', [ContactController::class, 'store']);
+Route::get('/contact', [ContactController::class, 'show']);
 
 
 
