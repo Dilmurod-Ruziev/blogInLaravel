@@ -22,7 +22,6 @@ class ArticleController extends Controller
         $articles = Article::latest()->paginate(7);
         $tags = Tag::all();
 
-
         return view('articles.index', compact('articles', 'tags', 'allArticles'));
     }
 
@@ -95,7 +94,6 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         $article->delete();
-
         return redirect('/articles');
     }
 }
