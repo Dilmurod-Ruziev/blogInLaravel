@@ -63,10 +63,10 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $articleTags = $article->tags;
-        $unionTags = array_column($articleTags->toArray(), 'name', 'id');
-        $allTags = Tag::pluck('name');
-        $differTags = array_diff($allTags->toArray(), $unionTags);
 
+        $unionTags = array_column($articleTags->toArray(), 'name', 'id');
+        $allTags = Tag::pluck('name', 'id');
+        $differTags = array_diff($allTags->toArray(), $unionTags);
         $tags = Tag::all();
         return view('articles.edit', compact('article', 'unionTags', 'tags', 'differTags'));
     }

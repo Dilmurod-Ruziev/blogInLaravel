@@ -1,4 +1,3 @@
-
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
@@ -16,7 +15,6 @@
                                 <li class="text-white"><a href="{{$article->user->id}}">{{$article->user->name}}</a></li>
                                 <li class="text-white">{{$article->created_at}}</li>
                                 <li class="text-white">{{read_time($article->body)}}</li>
-                                @include('components.like-buttons')
                             </ul>
                         </div>
                     </div>
