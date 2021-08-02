@@ -21,7 +21,8 @@ class UserSeeder extends Seeder
             'email' => 'cacs@asa',
             'avatar'=>'avatars/загруженное.jpeg',
             'description' => 'Always there is a way to optimization',
-            'password' => bcrypt('parol1234')
+            'password' => bcrypt('parol1234'),
+            'created_at'=>'2021-01-02 17:10:19'
         ]);
 
         DB::table('users')->insert([
@@ -31,8 +32,9 @@ class UserSeeder extends Seeder
             'email'=>'bah@dir.com',
             'avatar'=>'avatars/A76DBF3E-A4E7-4A12-BBB1-B84AF9C75205.jpeg',
             'description' => "I've had such a rule at processions; 'and.",
-            'password' => bcrypt('baxa1234')
-            ]);
+            'password' => bcrypt('baxa1234'),
+            'created_at'=>'2021-02-02 17:09:19'
+        ]);
 
         DB::table('users')->insert([
             'id' => 3,
@@ -41,8 +43,9 @@ class UserSeeder extends Seeder
             'email'=> 'mirf@yz.com',
             'avatar'=>'avatars/загруженное.jpeg',
             'description' => "Dormouse shall!' they both sat silent and looked.",
-            'password' => bcrypt('csacacsacsac')
-            ]);
+            'password' => bcrypt('csacacsacsac'),
+            'created_at'=>'2021-03-02 17:09:19'
+        ]);
 
         DB::table('users')->insert([
             'id' => 4,
@@ -51,7 +54,8 @@ class UserSeeder extends Seeder
             'email'=> 'nirv@na.com',
             'avatar'=>'avatars/LWZLI5BcOwZmpy5XcSgF52aRNjpGlfV2z9RbWTaX.jpeg',
             'description' => "It's better to burn out than to fade away",
-            'password' => bcrypt('parol123')
+            'password' => bcrypt('parol123'),
+            'created_at'=>'2021-04-02 17:09:19'
         ]);
     }
 }
