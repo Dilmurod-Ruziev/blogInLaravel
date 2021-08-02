@@ -1,5 +1,9 @@
 <?php
 
+use App\Models\Tag;
+use Database\Seeders\ArticleTagSeeder;
+use Database\Seeders\TagSeeder;
+use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call([
+            UserSeeder::class,
+            ArticleSeeder::class,
+            TagSeeder::class,
+            ArticleTagSeeder::class
+        ]);
     }
 }
